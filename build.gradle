@@ -6,4 +6,8 @@ def myClosure = {
     println "The value of foo is $foo"
 }
 
+def bar = myClosure
+def baz = bar
 myClosure()
+bar()
+baz()
