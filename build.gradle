@@ -1,27 +1,9 @@
 task groovy << {}
 
-def noArgs() {
-    println "Called the no args function"
+def foo = "One million dollars"
+def myClosure = {
+    println "Hello from a closure"
+    println "The value of foo is $foo"
 }
 
-def oneArg(x) {
-    println "Called the 1 arg function with $x"
-    x
-}
-
-def twoArgs(x, y) {
-    println "Called the 2 args function with $x and $y"
-    x + y
-}
-
-// do
-twoArgs 200, 300
-
-// don't
-//noArgs
-
-// don't
-//twoArgs oneArg 500, 200
-
-// do
-twoArgs oneArg(500), 200
+myClosure()
