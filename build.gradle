@@ -1,9 +1,27 @@
 task groovy << {}
 
-def foo = 6.5
+def noArgs() {
+    println "Called the no args function"
+}
 
-println "foo has value: $foo"
-println "Let's do some math. 5 + 6 = ${5 + 6}"
-println "foo is of type: ${foo.class} and has value: $foo"
-foo = "a string"
-println "foo is now of type: ${foo.class} and has value: $foo"
+def oneArg(x) {
+    println "Called the 1 arg function with $x"
+    x
+}
+
+def twoArgs(x, y) {
+    println "Called the 2 args function with $x and $y"
+    x + y
+}
+
+// do
+twoArgs 200, 300
+
+// don't
+//noArgs
+
+// don't
+//twoArgs oneArg 500, 200
+
+// do
+twoArgs oneArg(500), 200
